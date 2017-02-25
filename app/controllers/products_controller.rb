@@ -17,8 +17,6 @@ class ProductsController < ApplicationController
     end
       redirect_to :back
   end
-
-
   def wow
     @products = Product.where(:category => "wow")
   end
@@ -38,16 +36,29 @@ class ProductsController < ApplicationController
     @products = Product.where(:category => "heroes")
   end
 
->>>>>>> classify-function
-# 2.25 下面是搜索
-  def search
-    @products = Product.ransack({:title_or_description_cont => @q}).result(distinct: true)
+  def favorite
+    @product = Product.find(params[:id])
+    type = params[:type]
+    if type =="favorite"
+      current_user.favorite_products << @product
+      redirect_to :back
+    elsif type == "unfavorite"
+      current_user.favorite_products.delete(@product)
+      redirect_to :back
+    else
+      redirect_to :back
+    end
   end
-  protected
-  def validates_search_key
-    @q = params[:query_string].gsub(/\\|\'|\/|\?/, "") if params[:query_string].present?
-  end
-# 搜索结束
+  # 2.25 下面是搜索
+    def search
+      @products = Product.ransack({:title_or_description_cont => @q}).result(distinct: true)
+    end
+    protected
+    def validates_search_key
+      @q = params[:query_string].gsub(/\\|\'|\/|\?/, "") if params[:query_string].present?
+    end
+  # 搜索结束
+
   private
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price)
