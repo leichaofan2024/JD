@@ -17,15 +17,37 @@ class ProductsController < ApplicationController
     end
       redirect_to :back
   end
-  # 2.25 下面是搜索
+
+
+  def wow
+    @products = Product.where(:category => "wow")
+  end
+  def overwatch
+    @products = Product.where(:category => "overwatch")
+  end
+  def diablo
+    @products = Product.where(:category => "diablo")
+  end
+  def starcraft
+    @products = Product.where(:category => "starcraft")
+  end
+  def hearthstone
+    @products = Product.where(:category => "hearthstone")
+  end
+  def heroes
+    @products = Product.where(:category => "heroes")
+  end
+
+>>>>>>> classify-function
+# 2.25 下面是搜索
   def search
-  	@products = Product.ransack({:title_or_description_cont => @q}).result(distinct: true)
+    @products = Product.ransack({:title_or_description_cont => @q}).result(distinct: true)
   end
   protected
   def validates_search_key
-  	@q = params[:query_string].gsub(/\\|\'|\/|\?/, "") if params[:query_string].present?
+    @q = params[:query_string].gsub(/\\|\'|\/|\?/, "") if params[:query_string].present?
   end
-  # 搜索结束
+# 搜索结束
   private
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price)

@@ -15,11 +15,17 @@ Rails.application.routes.draw do
     end
   end
   resources :products do
-    # 搜索
+
     collection do
       get :search
+      get :wow
+      get :overwatch
+      get :diablo
+      get :starcraft
+      get :hearthstone
+      get :heroes
     end
-    # 搜索止
+
     member do
       post :add_to_cart
     end
