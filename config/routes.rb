@@ -15,10 +15,16 @@ Rails.application.routes.draw do
     end
   end
   resources :products do
+    put :favorite, on: :member
     member do
       post :add_to_cart
     end
   end
+
+
+  resources :favorite do
+  end
+
   resources :carts do
     collection do
       delete :clean
