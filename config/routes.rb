@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     end
   end
   resources :products do
-<<<<<<< HEAD
 
     collection do
       get :search
@@ -26,10 +25,8 @@ Rails.application.routes.draw do
       get :hearthstone
       get :heroes
     end
-
-=======
     put :favorite, on: :member
->>>>>>> favorite-function
+    resources :reviews
     member do
       post :add_to_cart
     end
