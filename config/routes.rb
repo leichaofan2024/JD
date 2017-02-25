@@ -15,6 +15,11 @@ Rails.application.routes.draw do
     end
   end
   resources :products do
+    # 搜索
+    collection do
+      get :search
+    end
+    # 搜索止
     member do
       post :add_to_cart
     end
