@@ -13,9 +13,28 @@ class ProductsController < ApplicationController
     flash[:notice] = "你已成功将#{@product.title}加入购物车"
   else
     flash[:warning] = "你的购物车内已有此物品"
-  end 
+  end
     redirect_to :back
   end
+  def wow
+    @products = Product.where(:category => "wow")
+  end
+  def overwatch
+    @products = Product.where(:category => "overwatch")
+  end
+  def diablo
+    @products = Product.where(:category => "diablo")
+  end
+  def starcraft
+    @products = Product.where(:category => "starcraft")
+  end
+  def hearthstone
+    @products = Product.where(:category => "hearthstone")
+  end
+  def heroes
+    @products = Product.where(:category => "heroes")
+  end
+
   private
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price)
