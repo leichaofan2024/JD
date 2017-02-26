@@ -1,3 +1,101 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 以下是分类导航栏样式：
+ .category-nav li
+{
+  list-style: none;
+  height: 50px;
+  line-height: 50px;
+  border-bottom:1px solid;
+ position: relative;
+  text-align: center;
+  margin-left: -15px;
+}
+.category-nav
+{
+position:fixed;
+
+background-color: rgba(207,216,220 ,0.1);
+top:20%;
+left:3%;
+width:200px;
+}
+.category-nav a
+{
+color:black;
+font-size:15px;
+}
+.category-nav a:hover
+{
+text-decoration:none;
+color:red;
+}
+.category-wow
+{
+  background-image: url(http://www.zero1gaming.com/wp-content/uploads/2013/01/Featured-Image-WoW-Logo-221x221.png);
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-size: 25px;
+  position:absolute;
+  left:-10px;
+  top: 15px;
+}
+.category-overwatch
+{
+  background-image: url(http://www.dadajiasu.com/uploads/allimg/column/logo30_20160722043057.png);
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-size: 25px;
+  position:absolute;
+  left:-10px;
+  top: 15px;
+}
+.category-diablo
+{
+  background-image: url(http://diablo3.nos.netease.com/1/header/logo.png);
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-size: 30px;
+  position:absolute;
+  left:-10px;
+  top: 15px;
+}
+.category-starcraft
+{
+  background-image: url(https://www.battlenet.com.cn/forums/static/images/game-logos/game-logo-sc2.png);
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-size: 30px;
+  position:absolute;
+  left:-10px;
+  top: 15px;
+}
+.category-hearthstone
+{
+  background-image: url(http://ue3.shouyou.itc.cn/images/lscs/index/2013/logo.png);
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-size: 30px;
+  position:absolute;
+  left:-10px;
+  top: 15px;
+}
+.category-heroes
+{
+  background-image: url(http://www.eui.cc/wp-content/uploads/2014/05/logo_cn.png);
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-size: 30px;
+  position:absolute;
+  left:-10px;
+  top: 15px;
+}
+// 分类导航栏样式止
