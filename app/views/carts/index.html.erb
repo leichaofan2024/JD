@@ -21,6 +21,8 @@
             <%= link_to product_path(cart_item.product) do %>
               <% if cart_item.product.image.present? %>
                 <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+              <% elsif %>
+                <%= image_tag(cart_item.product.image_path, :width => 400, :height => 400, class: "thumbnail") %>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>

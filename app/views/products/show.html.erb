@@ -2,6 +2,8 @@
   <div class="col-md-6">
     <% if @product.image.present? %>
       <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% elsif %>
+      <%= image_tag(@product.image_path,:width => 400, :height => 400, class: "thumbnail") %>
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>

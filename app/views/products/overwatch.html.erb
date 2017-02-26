@@ -1,14 +1,46 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-    </div>
-  <% end %>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                                   height:100%;
+                                   width:100%;
+                                   background-image:url("https://images8.alphacoders.com/564/564997.jpg");/*your background image*/
+                                   background-repeat: no-repeat;/*we want to have one single image not a repeated one*/
+                                   background-size:cover;/*this sets the image to fullscreen covering the whole screen*/
+                                   /*css hack for ie*/
+                                   filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
+                                   -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
+
+                              }
+        </style>
+    </head>
+    <body class="container-fluid">
+        <div>
+            <a href="/products"><img src='https://ooo.0o0.ooo/2017/02/26/58b28b297bfb6.png' ></a>
+        </div>
+        <div class="row container-fluid col-md-12" style="background-color:rgba(250, 250, 250, 0.15)">
+            <div class="row">
+                <div  style="margin-left:17%; margin-bottom:-5px">
+                    <iframe width="80%" height="315" src="https://www.youtube.com/embed/uhzyKEeI2o0?list=PLDYGj5Xxy5y1ge2F5s1lmDgtINhUw-2EG" frameborder="0" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="width:80%;margin:0 auto">
+            <% @products.each do |product| %>
+                <div class="col-xs-6 col-md-3" style="padding-left:50px">
+                    <%= link_to product_path(product) do %>
+                        <% if product.image.present? %>
+                            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                        <% elsif %>
+                              <%= image_tag(product.image_path, :width => 200, :height => 200, class: "thumbnail") %>
+                        <% else %>
+                            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                        <% end %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </body>
+</html>
