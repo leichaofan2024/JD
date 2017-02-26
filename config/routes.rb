@@ -15,10 +15,27 @@ Rails.application.routes.draw do
     end
   end
   resources :products do
+
+    collection do
+      get :search
+      get :wow
+      get :overwatch
+      get :diablo
+      get :starcraft
+      get :hearthstone
+      get :heroes
+    end
+    put :favorite, on: :member
+    resources :reviews
     member do
       post :add_to_cart
     end
   end
+
+
+  resources :favorite do
+  end
+
   resources :carts do
     collection do
       delete :clean

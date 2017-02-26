@@ -1,5 +1,8 @@
 <h2 class="text-center"> 发布新商品</h2>
 <%= simple_form_for [:admin, @product] do |f| %>
+<div class="group">
+   <%= f.input :category, :collection => ["wow","overwatch","diablo","starcraft","hearthstone","heroes"], :selected => "wow" %>
+</div>
 <%= f.input :title %>
 <%= f.input :description %>
 <%= f.input :quantity %>
