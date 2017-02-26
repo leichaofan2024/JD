@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// 以下是首页大图样式；
+.index1
+{
+  background-image:url(http://sc2.tgbus.com/UploadFiles_6251/201009/20100929134230137.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:-20px 0;
+}
+.index2
+{
+  position: relative;
+  height:300px;
+  line-height: 200px;
+  width:100%;
+}
+// 首页大图止。
+
 // 以下是分类导航栏样式：
  .category-nav li
 {
@@ -15,12 +32,13 @@
 }
 .category-nav
 {
-position:fixed;
+position:relative;
 
 background-color: rgba(207,216,220 ,0.1);
-top:20%;
+top:30%;
 left:3%;
 width:200px;
+height:500px;
 }
 .category-nav a
 {
