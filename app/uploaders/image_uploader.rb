@@ -6,12 +6,8 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-<<<<<<< HEAD
   # storage :fog
-=======
-  #  storage :fog
 
->>>>>>> b559500cf7f614171dee368622afbbcf09c3b92e
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
