@@ -32,7 +32,7 @@ create_products = for i in 1..7 do
     quantity: rand(30..90),
     price: products_prices[i-1],
     category: products_category[i-1],
-    image: products_image_path[i-1] ])
+    image_path: products_image_path[i-1] ])
 end
 puts "create wow products"
 
