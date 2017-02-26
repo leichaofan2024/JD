@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170225032652) do
-=======
-ActiveRecord::Schema.define(version: 20170225063227) do
->>>>>>> favorite-function
-=======
 ActiveRecord::Schema.define(version: 20170225085745) do
->>>>>>> review-function
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -74,12 +66,6 @@ ActiveRecord::Schema.define(version: 20170225085745) do
     t.datetime "updated_at",  null: false
     t.string   "image"
     t.string   "category"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    t.integer  "user_id"
->>>>>>> favorite-function
-=======
     t.integer  "user_id"
   end
 
@@ -89,7 +75,6 @@ ActiveRecord::Schema.define(version: 20170225085745) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> review-function
   end
 
   create_table "users", force: :cascade do |t|
