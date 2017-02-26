@@ -60,7 +60,7 @@ create_products = for i in 1..10 do
     quantity: rand(30..90),
     price: products_prices[i-1],
     category: products_category[i-1],
-    image: products_image_path[i-1] ])
+    image_path: products_image_path[i-1] ])
 end
 puts "create hearthstone products"
 
@@ -82,7 +82,7 @@ create_products = for i in 1..5 do
     quantity: rand(30..90),
     price: products_prices[i-1],
     category: products_category[i-1],
-    image: products_image_path[i-1] ])
+    image_path: products_image_path[i-1] ])
 end
 puts "create starcraft products"
 
@@ -100,7 +100,7 @@ create_products = for i in 1..2 do
     quantity: rand(30..90),
     price: products_prices[i-1],
     category: products_category[i-1],
-    image: products_image_path[i-1] ])
+    image_path: products_image_path[i-1] ])
 end
 puts "create diablo products"
 
@@ -118,7 +118,7 @@ create_products = for i in 1..2 do
     quantity: rand(30..90),
     price: products_prices[i-1],
     category: products_category[i-1],
-    image: products_image_path[i-1] ])
+    image_path: products_image_path[i-1] ])
 end
 puts "create overwatch products"
 
@@ -135,6 +135,6 @@ create_products = for i in 1..2 do
     quantity: rand(30..90),
     price: products_prices[i-1],
     category: products_category[i-1],
-    image: products_image_path[i-1] ])
+    image_path: products_image_path[i-1] ])
 end
 puts "create heroes products"

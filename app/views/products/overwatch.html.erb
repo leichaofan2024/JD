@@ -33,6 +33,8 @@
                     <%= link_to product_path(product) do %>
                         <% if product.image.present? %>
                             <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                        <% elsif %>
+                              <%= image_tag(product.image_path, :width => 200, :height => 200, class: "thumbnail") %>
                         <% else %>
                             <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                         <% end %>
