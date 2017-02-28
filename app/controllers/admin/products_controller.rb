@@ -37,9 +37,12 @@ class Admin::ProductsController < ApplicationController
     @product.destroy
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
-    @product = @cart_item.product
-    @cart_item.destroy
+   if @cart_item.blank?
+      redirect_to admin_products_path
+   else
+     @cart_item.destroy
     redirect_to admin_products_path
+  end
   end
   private
    def product_params
