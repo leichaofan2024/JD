@@ -54,24 +54,28 @@
   <div class="col-md-10">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
+      <div style="border:solid 1px; width:200px">
       <%= link_to product_path(product) do %>
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
         <% elsif %>
-          <%= image_tag(product.image_path, :width => 200, :height => 200, class: "thumbnail") %>
+          <%= image_tag(product.image_path, :width => 200, :height => 110, class: "thumbnail") %>
         <% else %>
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
+        <div style="width:200px; height:90px; background-color:#1A237E; color: #fff">
+          <%= product.title %> ￥ <%= product.price %>
+          <!-- 收藏功能 -->
+          <% if current_user && current_user.is_favorite_of?(product) %>
+          <%= link_to("取消收藏",favorite_product_path(product, type:"unfavorite"), method: :put)%>
+          <% else %>
+          <%= link_to("添加收藏",favorite_product_path(product, type:"favorite"), method: :put) %>
+          <% end %>
+          <!-- 收藏功能止 -->
+        </div>
       <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-      <!-- 收藏功能 -->
-      <% if current_user && current_user.is_favorite_of?(product) %>
-      <%= link_to("取消收藏",favorite_product_path(product, type:"unfavorite"), method: :put)%>
-      <% else %>
-      <%= link_to("添加收藏",favorite_product_path(product, type:"favorite"), method: :put) %>
-      <% end %>
-      <!-- 收藏功能止 -->
     </div>
+  </div>
   <% end %>
   </div>
 </div>
