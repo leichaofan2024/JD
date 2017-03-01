@@ -19,6 +19,28 @@
   line-height: 200px;
   width:100%;
 }
+.carousel {
+  display: block;
+  height: 300px;
+  max-width: 100%;
+  line-height: 1;
+  width: 100%;
+  margin: 0 auto;
+}
+.carousel .item {
+
+  height: 300px;
+
+}
+
+//增加这个可以实现大图满屏显示，右侧没有空白
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+display: block;
+height: auto;
+max-width: 100%;
+line-height: 1;
+width: 100%;
+}
 // 首页大图止。
 
 // 首页导航栏样式
