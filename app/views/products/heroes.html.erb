@@ -15,7 +15,7 @@
                               }
         </style>
     </head>
-    <body class="container-fluid">
+    <body class="container-fluid category-index">
         <div>
             <a href="/products"><img src='https://ooo.0o0.ooo/2017/02/26/58b28c01e0724.png' ></a>
         </div>
@@ -27,9 +27,9 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="width:80%;margin:0 auto">
+        <div class="row category-product">
             <% @products.each do |product| %>
-                <div class="col-xs-6 col-md-3" style="padding-left:50px">
+                <div class="col-xs-6 col-md-3">
                     <%= link_to product_path(product) do %>
                         <% if product.image.present? %>
                             <%= image_tag(product.image.thumb.url, class: "thumbnail") %>

@@ -58,11 +58,12 @@
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
         <% elsif %>
-          <%= image_tag(product.image_path, :width => 200, :height => 200, class: "thumbnail") %>
+          <%= image_tag(product.image_path, :width => 200, :height => 110,  class: "thumbnail") %>
         <% else %>
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
+      <div>
       <%= product.title %> ￥ <%= product.price %>
       <!-- 收藏功能 -->
       <% if current_user && current_user.is_favorite_of?(product) %>
@@ -70,6 +71,7 @@
       <% else %>
       <%= link_to("添加收藏",favorite_product_path(product, type:"favorite"), method: :put) %>
       <% end %>
+     </div>
       <!-- 收藏功能止 -->
     </div>
   <% end %>

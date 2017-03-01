@@ -42,7 +42,7 @@
             </a>
             <ul class="dropdown-menu">
               <%if current_user.admin? %>
-              <li><%= link_to("admin panel", admin_products_path,:style => "color:rgba(121,85,72 ,1);background-color:rgba(26,35,126 ,1)")%></li>
+              <li><%= link_to("admin panel", admin_products_path,:style => "color:rgba(121,85,72 ,1);background-color:rgba(26,35,126 ,1);")%></li>
               <% end %>
               <li><%= link_to("宝藏收藏",favorite_index_path,:style => "color:rgba(121,85,72 ,1);background-color:rgba(26,35,126 ,0)")%></li>
               <li><%= link_to("个人订单列表", account_orders_path,:style => "color:rgba(121,85,72 ,1);background-color:rgba(26,35,126 ,1)")%></li>

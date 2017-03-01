@@ -17,7 +17,19 @@
  @import "bootstrap";
  @import "font-awesome";
 
+// 分类页框架
+.category-index
+{
+  margin-top: -50px;
+}
+.category-product
+{
+  width:80%;
+  margin:450px auto 0;
 
+  padding-bottom: 500px;
+}
+// 分类页框架
 // 导航栏美化2/28
 .pagetitle
 {
@@ -33,7 +45,7 @@
   position: relative;
   line-height: 50px;
   height:50px;
-  background-color: rgba(0,0,139 ,0.3);
+  background-color: rgba(26,35,126 ,0.5);
   z-index: 1000;
 }
 .store-logo
@@ -125,7 +137,7 @@
 {
   text-decoration: none;
   color:red;
-  font-size: 120%;
+
 }
 // 导航栏美化止
 
@@ -134,8 +146,27 @@
 .footerframe
 {
   width:100%;
-  height:100px;
-  margin-top: -120px;
-
+  margin-top: -300px;
+  height:280px;
+  background-color: rgba(26,35,126 ,0.2);
+  color:white;
+}
+.footerframe1
+{
+  text-align: center;
+  height:200px;
+}
+.footerframe1 span
+{
+  margin:0 40px;
+}
+.footerframe1 i
+{
+  margin:0 10px;
+}
+.footerframe2
+{
+  text-align: center;
+height:80px;
 }
 //  footer样式止

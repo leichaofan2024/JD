@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :current_user_required
+  before_action :current_user_required,only: [:add_to_cart,:favorite]
   before_action :validates_search_key, only: [:search]
   def index
     @products = Product.all
