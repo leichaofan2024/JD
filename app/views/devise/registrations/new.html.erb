@@ -1,4 +1,4 @@
-<div class="" style="padding-bottom:500px">
+<!-- <div class="" style="padding-bottom:500px">
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -16,4 +16,56 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-</div>
+</div> -->
+<!--  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <style media="screen">
+      body {
+        height:100%;
+        width:100%;
+        background-image:url("https://ww4.sinaimg.cn/large/006y8lValy1fd6kfk9pfkj30zk15o3yw.jpg");/*your background image*/
+        background-repeat: no-repeat;/*we want to have one single image not a repeated one*/
+        background-size:cover;/*this sets the image to fullscreen covering the whole screen*/
+        /*css hack for ie*/
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
+        -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
+      }
+      .frame {
+        padding-bottom: 200px;
+        z-index: 100px;
+        margin: 0 auto;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div style="padding-bottom:500px">
+      <div style="width:100%">
+        <div class="form-inputs" style="margin: 0 auto;width:30%; color: #fff">
+    <h2 style="color: #fff">注册</h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+
+              <%= f.input :email, required: true, autofocus: true %>
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+              <%= f.input :password_confirmation, required: true %>
+
+
+          <div class="form-actions">
+            <%= f.button :submit, "注册" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+
+      </div>
+    </div>
+
+      </div>
+
+      </body>
+    </html>
