@@ -13,9 +13,9 @@ u.is_admin = true
 u.save
 puts "created admin account"
 
-products = ["wow","wow","wow","wow","wow","wow","wow"]
-products_description = ["very good game","there are many people love it","very good game","there are many people love it",
-                        "very good game","there are many people love it","This feeling is wow."]
+products = ["wow1","wow2","wow3","wow4","wow5","wow6","wow7"]
+products_description = ["1","2","3","4",
+                        "5","6","7"]
 products_prices = [80,84,23,56,23,78,43]
 products_category = ["wow","wow","wow","wow","wow","wow","wow"]
 products_image_path= ["https://ooo.0o0.ooo/2017/02/26/58b2974e61214.jpg",
