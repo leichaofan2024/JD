@@ -139,7 +139,7 @@
         <% if current_user && current_user.is_favorite_of?(product) %>
         <%= link_to("",favorite_product_path(product, type:"unfavorite"),class: "fa fa-heart fa-2x", style: "color:red" , method: :put)%>
         <% else %>
-        <%= link_to("",favorite_product_path(product,  type:"favorite"),class: "fa fa-heart fa-2x", style: "color:gold" ,method: :put) %>
+        <%= link_to("",favorite_product_path(product,  type:"favorite"),class: "fa fa-heart fa-2x", style: "color:#52,156,253" ,method: :put) %>
         <% end %>
       </p>
      </div>

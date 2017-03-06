@@ -1,15 +1,31 @@
-<div class="row" style="padding-bottom:500px">
+<div class="row" style="padding-bottom:500px;width:100%">
+  <div class="col-md-10 col-xs-8" style="margin:0 auto">
   <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+    <div class="col-xs-6 col-md-3"  style="margin-bottom:50px">
+       <div class="">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail ",style:"padding:0;border:2px") %>
+          <% elsif %>
+            <%= image_tag(product.image_path, class: "thumbnail ",width:"200",height:"130", style: "padding:0;border:2px") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", style:"padding:0;border:2px") %>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-
+       </div>
+      <div class="productcard">
+        <p><%= product.title %> ￥ <%= product.price %></p>
+      <!-- 收藏功能 -->
+        <p>
+        <% if current_user && current_user.is_favorite_of?(product) %>
+        <%= link_to("",favorite_product_path(product, type:"unfavorite"),class: "fa fa-heart fa-2x", style: "color:red" , method: :put)%>
+        <% else %>
+        <%= link_to("",favorite_product_path(product,  type:"favorite"),class: "fa fa-heart fa-2x", style: "color:#52,156,253" ,method: :put) %>
+        <% end %>
+      </p>
+     </div>
+      <!-- 收藏功能止 -->
     </div>
   <% end %>
+  </div>
 </div>
