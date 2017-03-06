@@ -71,7 +71,7 @@
   </div>
 
     <!-- 以下为分类导航 -->
-  <div class="col-md-2">
+  <div class="col-md-2 col-xs-4">
       <ul class="category-nav" >
         <li>
           <a href="/products/wow">
@@ -118,28 +118,30 @@
       </ul>
   </div>
   <!-- 分类导航止 -->
-  <div class="col-md-10">
+  <div class="col-md-10 col-xs-8">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
-       <div class="productpicture">
+       <div class="">
         <%= link_to product_path(product) do %>
           <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail productpicture") %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail ",style:"padding:0;border:2px") %>
           <% elsif %>
-            <%= image_tag(product.image_path, class: "thumbnail productpicture") %>
+            <%= image_tag(product.image_path, class: "thumbnail ", style: "padding:0;border:2px") %>
           <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", style:"padding:0;border:2px") %>
           <% end %>
         <% end %>
        </div>
       <div class="productcard">
-        <%= product.title %><br/> ￥ <%= product.price %><br/>
+        <p><%= product.title %> ￥ <%= product.price %></p>
       <!-- 收藏功能 -->
+        <p>
         <% if current_user && current_user.is_favorite_of?(product) %>
-        <%= link_to("取消收藏",favorite_product_path(product, type:"unfavorite"), method: :put)%>
+        <%= link_to("",favorite_product_path(product, type:"unfavorite"),class: "fa fa-heart fa-2x", style: "color:red" , method: :put)%>
         <% else %>
-        <%= link_to("添加收藏",favorite_product_path(product, type:"favorite"), method: :put) %>
+        <%= link_to("",favorite_product_path(product,  type:"favorite"),class: "fa fa-heart fa-2x", style: "color:gold" ,method: :put) %>
         <% end %>
+      </p>
      </div>
       <!-- 收藏功能止 -->
     </div>
